@@ -7,6 +7,7 @@
         	  [kinopoisk.api :as api]))
 
 (defroutes app-routes
+    (GET "/" [] (views/index_get))
 	(GET "/register" [] (views/register_get))
 	(POST "/register" request (views/register_post
     	request #(redirect "/") #(api/render "register.html" (merge {:error-message "User with such credentials already exists."}))))

@@ -5,6 +5,10 @@
             [kinopoisk.server.db.connector :as connector])
   (:use [digest] :reload-all))
 
+
+(defn index_get []
+  (api/render "index.html"))
+
 (defn register_get []
 	(api/render "register.html"))
 

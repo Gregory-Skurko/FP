@@ -1,0 +1,88 @@
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/icons.min.css">
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/tag.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/dojo.dajax.core.js"></script>
+    <script type="text/javascript" src="js/jquery.dajax.core.js"></script>
+    <script type="text/javascript" src="js/mootools.dajax.core.js"></script>
+    <script type="text/javascript" src="js/prototype.dajax.core.js"></script>
+</head>
+
+{% block menu %}
+	 <div class="span1 vert-offset-top-2 fixed">
+        <div class="panel panel-primary menu-panel">
+            <ul class="nav nav-pills nav-stacked">
+            {% if user.is_authenticated %}
+                <li>
+                    {% include "include/menu_button.html" with href="/search" glyphicon_name="search" tooltip="Search" %}
+                </li>
+                <li>
+                    {% include "include/menu_button.html" with href="/" glyphicon_name="home" tooltip="Home" %}
+                </li>
+                <li class="left-offset-3px">
+                    {% include "include/menu_button.html" with href="/add-blog" glyphicon_name="list-alt" tooltip="New blog" %}
+                </li>
+                <li class="left-offset-3px">
+                    {% include "include/menu_button.html" with href="/add-post" glyphicon_name="edit" tooltip="New post" %}
+                </li>
+                <li clsas="left-offset-2px">
+                    {% include "include/menu_button.html" with href="/profile" glyphicon_name="cog" tooltip="Change personal information" %}
+                </li>
+                <li class="left-offset-4px">
+                    {% include "include/menu_button.html" with href="/logout" glyphicon_name="log-out" tooltip="Log out" %}
+                </li>
+            {% else %}
+                <li>
+                    {% include "include/menu_button.html" with href="/search" glyphicon_name="search" tooltip="Search" %}
+                </li>
+                <li>
+                    {% include "include/menu_button.html" with href="/" glyphicon_name="home" tooltip="Home" %}
+                </li>
+                <li>
+                    {% include "include/menu_button.html" with href="/login" glyphicon_name="log-in" tooltip="Log in" %}
+                </li>
+                <li>
+                    {% include "include/menu_button.html" with href="/register" glyphicon_name="registration-mark" tooltip="Register" %}
+                </li>
+            {% endif %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}	
+
+<div class="span8 offset3 vert-offset-top-2">
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

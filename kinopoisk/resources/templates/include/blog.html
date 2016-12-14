@@ -1,0 +1,34 @@
+<div class="post">
+    <a href="/{{blog.user}}/{{blog.name}}" id='{{blog.user}}/{{blog.name}}'>
+    {{blog.name}}
+    </a>
+    blog
+    <br>
+    about
+    <a href="/search/blog/{{blog.type}}/" id="search/{{blog.type}}/">
+    {{blog.type}}
+    </a>
+    <br>
+    author <a href="/{{blog.user}}/" id="{{blog.user}}">{{blog.user}}</a>
+    <br>
+    {% if not user = blog.user %}
+    <a href="/complain/blog/{{blog.id}}" style="color: #C80000 ;">
+    <i class="tiny material-icons prefix">
+    error
+    </i>
+    Complain
+    </a>
+    {% endif %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
