@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="file-field input-field col s11">
+        {% if has_icon %}<i class="material-icons prefix">{{has_icon}}</i>{% endif %}
+        {{form_field}}
+        <input class="file-path" type="text"/>
+        <label for="{{form_field.id_for_label}}">{{form_field.label}}</label>
+    </div>
+    {% if form_field.errors %}
+    <div class="alert alert-danger fade in">
+        <strong>{{form_field.errors}}</strong>
+    </div>
+    {% else %}
+    {% endif %}
+</div>
