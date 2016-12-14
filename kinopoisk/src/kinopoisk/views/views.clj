@@ -1,16 +1,16 @@
 (ns kinopoisk.views.views
-	(:require [kinopoisk.api :as api]))
-	(use 'selmer.parser)
+	(:require [kinopoisk.api :as api]
+            [noir.util.crypt :as crypt] 
+            [kinopoisk.server.db.data :as data]
+            [kinopoisk.server.db.connector :as connector])
+  (:use [digest] :reload-all))
 
-(defn register []
+(defn register_get []
 	(api/render "register.html"))
 
-(defn register [{{:keys [username password] :as user} :params} success error]
+(defn register_post [{{:keys [username password] :as user} :params} success error]
   (try 
-    (if-not (.read userdao username)
-      (do (-> (merge user {:role "user"}) (encrypt) (.create userdao))
-        (success))
-      (error)) 
-    (catch Exception exception
-      (prn exception) 
-      (error))))
+      (data/insert-value username (digest "sha-256" password))
+  (catch Exception exception
+   (prn exception) 
+    (error))))

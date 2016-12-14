@@ -9,7 +9,7 @@
 (parser/set-resource-path!  (clojure.java.io/resource "templates"))
 (filters/add-filter! :markdown (fn [content] [:safe (md-to-html-string content)]))
 
-(defn render
+(defn render  
   [template & [params]]
   (content-type
     (ok
