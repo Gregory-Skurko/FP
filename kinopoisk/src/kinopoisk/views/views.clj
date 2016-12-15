@@ -7,14 +7,14 @@
 
 
 (defn index_get []
-  (api/render "index.html"))
+  (api/render "index.html" {:films (data/select-all-films)}))
 
 (defn register_get []
 	(api/render "register.html"))
 
 (defn register_post [{{:keys [username password] :as user} :params} success error]
   (try 
-      (data/insert-value username (digest "sha-256" password))
+      (data/insert-user username (digest "sha-256" password))
   (catch Exception exception
    (prn exception) 
     (error))))

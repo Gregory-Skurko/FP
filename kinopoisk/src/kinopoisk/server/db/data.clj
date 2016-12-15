@@ -4,7 +4,7 @@
             [kinopoisk.server.db.protocol :as protocol]
             [kinopoisk.server.db.connector :as connector]))
 
-(defn insert-value
+(defn insert-user
     [username, password]
     (clojure.java.jdbc/with-connection
       connector/db
@@ -13,7 +13,13 @@
 
 (defn insert-user-sql 
     [username, password]
-    (clojure.java.jdbc/insert-values
+    (jdbc/insert-values
       :user 
       [:username :password]
       [username password]))
+
+(defn select-all-films
+    []
+    (jdbc/query connector/db
+    (sql/select * :films)
+    ))

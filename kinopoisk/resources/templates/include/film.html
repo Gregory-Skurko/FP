@@ -1,0 +1,33 @@
+<div class="film">    
+    <h5>{{film.title}}</h5>
+    <div class="film-text" >{{film.description}}</div>
+    <div class="row">
+        <span class="padding-0px-8px">
+        
+        <a href="like{{film.id}}/" id='like{{film.id}}'>
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+        </a>
+        </span>
+
+        <a href="dislike{{film.id}}/" id='dislike{{film.id}}'>
+        <span class="glyphicon glyphicon-thumbs-down"></span>
+        </a>
+        <span class="{% if film.rating > 0 %}green-text {% else %} brown-text {% endif %}">{{film.rating}}</span>      
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

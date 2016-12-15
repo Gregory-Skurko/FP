@@ -1,8 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+ 	{% for film in films %}
+        {% include "include/film.html" %}
+	{% endfor %} 
 
+<script>
+    var size = 300,
+    newsContent= $('.film-text');
+
+    for (var i = 0; i < newsContent.length; ++i){
+        if(newsContent[i].innerHTML.length > size){
+            newsContent[i].innerHTML = newsContent[i].innerHTML.slice(0, size) + '...';
+        }
+    }
+</script>	
 {% endblock %}
+
 
 
 
