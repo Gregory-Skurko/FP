@@ -1,0 +1,33 @@
+{% style "/css/bootstrap.min.css" %}
+{% style "/css/style.css" %}
+   <div class="container-fluid">
+     <form action="/register" method="post" class="register-form"> 
+      <div class="row">      
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="username">USERNAME</label>
+               <input name="username" id="username" class="form-control" type="text">    
+           </div>            
+      </div>
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="password">PASSWORD</label>
+               <input name="password" id="password" class="form-control" type="password">             
+           </div>            
+      </div>
+      <hr>
+      <div class="row">           
+          <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+           <button class="btn btn-default logbutton">Sign up</button>           
+          </div>          
+      </div>    
+
+      {% if  error-message %}
+      <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        {{error-message}}
+      </div>
+      {% endif %}
+    </form>
+    
+</div>
