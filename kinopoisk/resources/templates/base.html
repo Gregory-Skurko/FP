@@ -21,9 +21,9 @@
 
 {% block menu %}
 	 <div class="span1 vert-offset-top-2 fixed">
-        <div class="panel panel-primary menu-panel">
+        <div class="panel panel-primary menu-panel">            
             <ul class="nav nav-pills nav-stacked">
-            {% if user.is_authenticated %}
+            {% if session.user_id %}
                 <li>
                     {% include "include/menu_button.html" with href="/search" glyphicon_name="search" tooltip="Search" %}
                 </li>
@@ -31,10 +31,7 @@
                     {% include "include/menu_button.html" with href="/" glyphicon_name="home" tooltip="Home" %}
                 </li>
                 <li class="left-offset-3px">
-                    {% include "include/menu_button.html" with href="/add-blog" glyphicon_name="list-alt" tooltip="New blog" %}
-                </li>
-                <li class="left-offset-3px">
-                    {% include "include/menu_button.html" with href="/add-post" glyphicon_name="edit" tooltip="New post" %}
+                    {% include "include/menu_button.html" with href="/favorites" glyphicon_name="star" tooltip="Favorites" %}
                 </li>
                 <li clsas="left-offset-2px">
                     {% include "include/menu_button.html" with href="/profile" glyphicon_name="cog" tooltip="Change personal information" %}

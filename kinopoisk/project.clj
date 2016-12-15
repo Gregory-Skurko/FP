@@ -12,7 +12,8 @@
                  [metosin/ring-http-response "0.8.0"]
                  [bouncer "1.0.0"]
                  [noir "1.0.0" :exclusions [org.clojure/clojure hiccup]]
-                 [digest "1.4.5"]]
+                 [digest "1.4.5"]
+                 [buddy/buddy-auth "1.3.0"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler kinopoisk.handler/app}
   :profiles
