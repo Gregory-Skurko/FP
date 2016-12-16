@@ -13,7 +13,8 @@
                  [bouncer "1.0.0"]
                  [noir "1.0.0" :exclusions [org.clojure/clojure hiccup]]
                  [digest "1.4.5"]
-                 [buddy/buddy-auth "1.3.0"]]
+                 [buddy/buddy-auth "1.3.0"]
+                 [selmer "1.10.2"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler kinopoisk.handler/app}
   :profiles

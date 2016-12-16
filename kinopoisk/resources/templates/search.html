@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action=""  class="" method="POST">
+        <div class="row">
+            <div class="col-md-10 col-sm-10 col-xs-10 col-lg-10">
+               {% include "include/input_field.html" %}
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+               {% include "include/menu_button.html" with href="/search" glyphicon_name="search" tooltip="Search" %}
+            </div>
+        </div>
+     
+    </form>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+
+{% for film in films reversed %}
+    {% include "include/film.html" %}
+{% endfor %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

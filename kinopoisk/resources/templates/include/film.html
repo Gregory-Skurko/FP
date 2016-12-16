@@ -1,20 +1,33 @@
+    
 <div class="film">    
-    <h5>{{film.title}}</h5>
+<form action="remove-film" method="post">  
+    <h4>{{film.title}}</h4>
     <div class="film-text" >{{film.description}}</div>
     <div class="row">
         <span class="padding-0px-8px">
         
-        <a href="like{{film.id}}/" id='like{{film.id}}'>
+        <a href="{{film.id}}" id='like{{film.id}}'>
         <span class="glyphicon glyphicon-thumbs-up"></span>
         </a>
         </span>
 
-        <a href="dislike{{film.id}}/" id='dislike{{film.id}}'>
+        <a href="dislike{{film.id}}" id='dislike{{film.id}}'>
         <span class="glyphicon glyphicon-thumbs-down"></span>
         </a>
-        <span class="{% if film.rating > 0 %}green-text {% else %} brown-text {% endif %}">{{film.rating}}</span>      
+        <span class="{% if film.rating > 0 %}green-text {% else %} brown-text {% endif %}">{{film.rating}}</span>     
+        <hr>
+    <input type="hidden" id="film" name="film" value="{{film.id}}"></input>
+        
     </div>
+    <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+              <button class="btn btn-default regbutton">Remove</button>      
+            </div> 
+        </div>  
+</form>         
 </div>
+
+
 
 
 

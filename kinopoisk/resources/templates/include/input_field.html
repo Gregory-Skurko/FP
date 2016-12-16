@@ -1,20 +1,15 @@
-<div class="row">
+
     {% if form_field.errors %}
     <div class="alert alert-danger fade in">
     {% endif %}
-    <div class="{% if not choice %}input-field{% endif %}">
-        {% if has_icon %}<i class="material-icons prefix">{{has_icon}}</i>{% endif %}
-        {% if choice %}
-        <label for="{{form_field.id_for_label}}">{{form_field.label}}</label>
-        {% endif %}
-        {{form_field}}
-        {% if not choice %}
-        <label for="{{form_field.id_for_label}}">{{form_field.label}}</label>
-        {% endif %}
-    </div>
+        {% if has_icon %}<i class="material-icons prefix">{{has_icon}}</i>{% endif %}               
+           <div class="form-group">
+                <label for="{{name}}">{{label}}</label>
+                <input name="{{name}}" id="{{name}}" class="form-control" type="{{type}}">    
+           </div>                  
     {% if form_field.errors %}
         <strong>{{form_field.errors}}</strong>
     </div>
     {% endif %}
-</div>
+
 

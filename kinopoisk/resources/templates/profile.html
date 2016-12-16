@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container-fluid">
+        <form action="/profile" method="post" class="register-form">
+            {% include "include/input_field.html" name="old_password" label="OLD PASSWORD" type="password" %}
+            {% include "include/input_field.html" name="new_password" label="NEW PASSWORD" type="password" %}
+            {% include "include/input_field.html" name="password_confirm" label="CONFIRM PASSWORD" type="password" %}
+            <hr>
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                  <button class="btn btn-default logbutton">Change</button>      
+                </div> 
+            </div>      
+        </form> 
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

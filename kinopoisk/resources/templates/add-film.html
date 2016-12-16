@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="add-film" method="post" class="register-form">       
+
+        {% include "include/input_field.html" with name="title" label="TITLE" type="text" %}
+                
+               <div class="form-group">
+                    <label for="description">DESCRIPTION</label>
+                    <textarea name="description" id="description" class="form-control" style="min-height: 300px;"></textarea> 
+               </div>                  
+        
+        <hr>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+              <button class="btn btn-default logbutton">Create</button>      
+            </div> 
+        </div>  
+
+</form>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

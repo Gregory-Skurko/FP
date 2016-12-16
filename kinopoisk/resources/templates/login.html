@@ -1,23 +1,13 @@
-{% style "/css/bootstrap.min.css" %}
-{% style "/css/style.css" %}
+{% extends "base.html" %}
+{% block content %}
    <div class="container-fluid">
      <form action="/login" method="post" class="register-form"> 
-      <div class="row">      
-           <div class="col-md-4 col-sm-4 col-lg-4">
-              <label for="username">USERNAME</label>
-               <input name="username" id="username" class="form-control" type="text">    
-           </div>            
-      </div>
-      <div class="row">
-           <div class="col-md-4 col-sm-4 col-lg-4">
-              <label for="password">PASSWORD</label>
-               <input name="password" id="password" class="form-control" type="password">             
-           </div>            
-      </div>
+      {% include "include/input_field.html" with name="username" label="USERNAME" type="text" %}
+      {% include "include/input_field.html" with name="password" label="PASSWORD" type="password" %}  
       <hr>
       <div class="row">           
-          <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-           <button class="btn btn-default logbutton">Sign up</button>           
+          <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6"> 
+            <button class="btn btn-default logbutton">Log in</button>           
           </div>          
       </div>    
 
@@ -31,3 +21,5 @@
     </form>
     
 </div>
+
+{% endblock %}
